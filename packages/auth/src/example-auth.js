@@ -16,7 +16,7 @@ const GET_LOGGED_IN = (username, password) =>
       pending: true,
     });
     setTimeout(() => {
-      if (username === "exampleuser" && password === "examplepassword") {
+      if (username === "a" && password === "a") {
         const sessionToken = "abc123def456";
         localStorage.setItem("sessionToken", sessionToken);
         resolve({
@@ -32,7 +32,7 @@ const GET_LOGGED_IN = (username, password) =>
           pending: false,
         });
       }
-    }, 2500);
+    }, 1500);
   });
 
 export function login(username, password) {

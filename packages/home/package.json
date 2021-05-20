@@ -1,5 +1,6 @@
 {
   "name": "@example/home",
+  "license": "NPOSL-3.0",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",

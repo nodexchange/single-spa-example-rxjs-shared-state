@@ -1,5 +1,6 @@
 {
   "name": "@example/root-config",
+  "license": "NPOSL-3.0",
   "scripts": {
     "start": "webpack serve --mode development --port 9000 --env isLocal",
     "build": "webpack --mode production",

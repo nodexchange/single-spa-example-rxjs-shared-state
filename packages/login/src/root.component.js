@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { auth$, login } from "@example/auth";
+import { design } from "@example/utils";
 import Loader from "./loader.component";
 
-export default function Root(props) {
+import { hot } from "react-hot-loader/root";
+
+const Root = (props) => {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState();
 
@@ -26,10 +29,12 @@ export default function Root(props) {
     e.preventDefault();
     const { username, password } = document.forms.login.elements;
     login(username.value, password.value);
+    design();
   };
 
   return (
     <div>
+      <div style={{ textAlign: "center", padding: "1rem" }}>Welcome!</div>
       <form name="login" className="login-form" onSubmit={onSubmit}>
         <label htmlFor="username">Username</label>
         <input id="username" type="text" required />
@@ -44,4 +49,6 @@ export default function Root(props) {
       </form>
     </div>
   );
-}
+};
+
+export default hot(Root);
