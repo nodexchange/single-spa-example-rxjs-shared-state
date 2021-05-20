@@ -1,5 +1,6 @@
 {
   "name": "@example/navbar",
+  "license": "NPOSL-3.0",
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",

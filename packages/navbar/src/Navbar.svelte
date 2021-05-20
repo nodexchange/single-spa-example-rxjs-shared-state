@@ -30,7 +30,7 @@
       <span>Welcome!</span>
       <button class="action" type="button" on:click|once={logout}>Logout</button
       >
-    {:else}<span>Login</span>{/if}
+    {:else}<span>Log in</span>{/if}
   </Router>
 </nav>
 
