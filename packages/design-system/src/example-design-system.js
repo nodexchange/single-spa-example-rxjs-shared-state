@@ -1,11 +1,9 @@
 import React from "react";
 
-import Typography from './components/typography/Typography';
-
-export function PtxTypography(props) {
+export function PtxTypography({text}) {
   return (
     <div>
-      <Typography variant="main">Props received: {props.text}</Typography>
+      <button>{text}</button>
     </div>
   )
 };

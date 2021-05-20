@@ -21,18 +21,18 @@ const mergeRulesByTestMatch = mergeWithRules({
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: "example",
-    projectName: "design-system",
+    projectName: "navbar",
     webpackConfigEnv,
     argv,
   });
 
   const config = mergeRulesByTestMatch(defaultConfig, {
-    // modify the webpack config however you'd like to by adding to this object
     resolve: {
       alias: {
         'react-dom': '@hot-loader/react-dom',
       },
     },
+    // modify the webpack config however you'd like to by adding to this object
     module: {
       rules: [
         {
@@ -51,7 +51,7 @@ module.exports = (webpackConfigEnv, argv) => {
     },
     plugins: [isDevelopment && new webpack.HotModuleReplacementPlugin()],
     devServer: {
-      port: 9010,
+      port: 8000,
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
