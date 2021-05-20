@@ -8,9 +8,9 @@ const Root = (props) => {
     <div>
       <div className="footer">
         <div className="footer-content">
-
+          <DesignSystem />
           <p className="footer-text">
-            2 Copyright © 2021 Bottomline Technologies (de), Inc.
+            Copyright © 2021 Bottomline Technologies (de), Inc.
           </p>
         </div>
       </div>
