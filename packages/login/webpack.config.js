@@ -28,6 +28,11 @@ module.exports = (webpackConfigEnv, argv) => {
 
   const config = mergeRulesByTestMatch(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
+    resolve: {
+      alias: {
+        'react-dom': '@hot-loader/react-dom',
+      },
+    },
     module: {
       rules: [
         {

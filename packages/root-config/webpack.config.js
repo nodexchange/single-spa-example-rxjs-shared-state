@@ -23,6 +23,11 @@ module.exports = (webpackConfigEnv, argv) => {
 
   const config = merge(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
+    resolve: {
+      alias: {
+        'react-dom': '@hot-loader/react-dom',
+      },
+    },
     plugins: [
       new HtmlWebpackPlugin({
         inject: false,
