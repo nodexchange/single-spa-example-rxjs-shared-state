@@ -2,35 +2,57 @@
   "name": "@example/navbar",
   "license": "NPOSL-3.0",
   "scripts": {
-    "build": "rollup -c",
-    "start": "rollup -c -w",
-    "serve": "sirv dist -c --no-clear",
-    "test": "jest",
-    "format": "prettier --write src/**/*.{svelte,js}"
+    "start": "webpack serve --hot",
+    "start:standalone": "webpack serve --env standalone",
+    "build": "webpack --mode=production",
+    "analyze": "webpack --mode=production --env analyze",
+    "lint": "eslint src --ext js",
+    "format": "prettier --write src/",
+    "test": "cross-env BABEL_ENV=test jest",
+    "watch-tests": "cross-env BABEL_ENV=test jest --watch",
+    "coverage": "cross-env BABEL_ENV=test jest --coverage"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && concurrently yarn:test yarn:lint"
+    }
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.1.0",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/svelte": "^3.0.3",
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/runtime": "^7.14.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^26.0.23",
+    "@types/systemjs": "^6.1.0",
+    "babel-eslint": "^11.0.0-beta.2",
     "babel-jest": "^26.6.3",
+    "concurrently": "^6.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-important-stuff": "^3.0.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
-    "postcss": "^8.2.4",
-    "prettier": "^2.2.1",
-    "prettier-plugin-svelte": "^2.1.1",
-    "rollup": "^2.38.1",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-svelte": "^7.1.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "svelte": "^3.32.0",
-    "svelte-jester": "^1.3.0"
+    "jest-cli": "^26.6.3",
+    "prettier": "^2.3.0",
+    "pretty-quick": "^3.1.0",
+    "react-hot-loader": "^4.13.0",
+    "react-refresh": "^0.10.0",
+    "single-spa-react": "^4.1.2",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-config-single-spa-react": "^2.2.2",
+    "webpack-dev-server": "^4.0.0-beta.0",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "single-spa-svelte": "^2.0.0",
-    "sirv-cli": "^1.0.10",
-    "svelte-routing": "^1.5.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

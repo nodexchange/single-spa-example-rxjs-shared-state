@@ -1,10 +1,12 @@
 module.exports = {
+  rootDir: "src",
   transform: {
-    "^.+\\.svelte$": "svelte-jester",
-    "^.+\\.js$": "babel-jest",
+    "^.+\\.(j|t)sx?$": "babel-jest",
   },
-  moduleFileExtensions: ["js", "svelte"],
+  moduleNameMapper: {
+    "\\.(css)$": "identity-obj-proxy",
+  },
   setupFilesAfterEnv: [
-    "./node_modules/@testing-library/jest-dom/dist/index.js",
+    "../node_modules/@testing-library/jest-dom/dist/index.js",
   ],
 };
