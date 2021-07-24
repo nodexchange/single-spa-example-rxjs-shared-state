@@ -1,21 +1,21 @@
 import React from "react";
+import { ThemeProvider, nextTheme } from "@example/design-system";
 import { design } from "@example/utils";
 import { hot } from "react-hot-loader/root";
 import DesignSystem from "./design.system";
 
 const Root = (props) => {
   return (
-    <div>
+    <ThemeProvider theme={nextTheme}>
       <div className="footer">
         <div className="footer-content">
           <DesignSystem />
-          <p>Hello Mr Shpetim</p>
           <p className="footer-text">
-            Copyright © 2021 Bottomline Technologies (de), Inc.
+            And the root Copyright © 2021 Bottomline Technologies (de), Inc.
           </p>
         </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 

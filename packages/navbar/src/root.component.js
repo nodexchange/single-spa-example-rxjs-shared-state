@@ -5,7 +5,19 @@ const Root = (props) => {
   return (
     <div>
       <div className="navbar">
-        <div className="navbar-content">Nav bar</div>
+        <div className="navbar-content">
+        <ul>
+          <li>
+          <a href='/home'>Home</a>
+          </li>
+          <li>
+          <a href='/login'>Login</a>
+          </li>
+          <li>
+          <a href='/'>root</a>
+          </li>
+        </ul>
+        </div>
       </div>
     </div>
   );

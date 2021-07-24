@@ -33,6 +33,8 @@ module.exports = (webpackConfigEnv, argv) => {
         'react-dom': '@hot-loader/react-dom',
       },
     },
+    mode: 'development',
+    devtool: 'eval',
     module: {
       rules: [
         {
