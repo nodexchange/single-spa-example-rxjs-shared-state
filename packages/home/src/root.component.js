@@ -1,13 +1,15 @@
 import React from "react";
-import { i18n, I18nContext, ThemeProvider, nextTheme } from "@example/design-system";
-import { hot } from "react-hot-loader/root";
+import { I18nContext, ThemeProvider, nextTheme, i18n } from "@example/design-system";
+import { Button, CustomButton } from '@example/design-system';
 
-const Root = (props) => {
+const Home = (props) => {
   return (
-    <ThemeProvider baseTheme={nextTheme} theme={{ modal: { width: 500 } }}>
+    <ThemeProvider theme={{ modal: { width: 500 } }}>
       <I18nContext.Provider value={i18n.english}>
+        <CustomButton text={'hello home'} />
         <section style={{ textAlign: "center", padding: "1rem" }}>
-          {props.name} is mounted!
+          {props.name} is mounted today?!
+          <Button text={'Glu button'} />
           <p>hello</p>
           <p>customProp: {props.bottomlineProp}</p>
         </section>
@@ -16,4 +18,4 @@ const Root = (props) => {
   );
 }
 
-export default hot(Root);
+export default Home;

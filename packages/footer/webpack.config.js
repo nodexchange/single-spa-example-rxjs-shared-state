@@ -44,8 +44,6 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       ],
     },
-    mode: 'development',
-    devtool: 'eval',
     plugins: [isDevelopment && new webpack.HotModuleReplacementPlugin()],
     devServer: {
       port: 9004,
