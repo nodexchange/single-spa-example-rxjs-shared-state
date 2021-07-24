@@ -1,9 +1,10 @@
 import React from "react";
 
-export function PtxTypography({text}) {
-  return (
-    <div>
-      <button>{text}</button>
-    </div>
-  )
+import { Button } from '@glu/buttons-react';
+import { GridLoading, ComposedGrid } from '@glu/grid-react';
+
+export {
+  Button,
+  ComposedGrid,
+  GridLoading,
 };
