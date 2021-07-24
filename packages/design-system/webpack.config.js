@@ -1,8 +1,5 @@
 const { mergeWithRules } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-react");
-const webpack = require("webpack");
-
-const isDevelopment = process.env.NODE_ENV !== "production";
 
 const mergeRulesByTestMatch = mergeWithRules({
   module: {
@@ -33,8 +30,6 @@ module.exports = (webpackConfigEnv, argv) => {
         'react-dom': '@hot-loader/react-dom',
       },
     },
-    mode: 'development',
-    devtool: 'eval',
     module: {
       rules: [
         {
@@ -51,7 +46,6 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       ],
     },
-    plugins: [isDevelopment && new webpack.HotModuleReplacementPlugin()],
     devServer: {
       port: 9010,
       headers: {

@@ -32,8 +32,6 @@ module.exports = (webpackConfigEnv, argv) => {
         'react-dom': '@hot-loader/react-dom',
       },
     },
-    mode: 'development',
-    devtool: 'eval',
     // modify the webpack config however you'd like to by adding to this object
     module: {
       rules: [

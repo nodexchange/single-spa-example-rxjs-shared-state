@@ -6,7 +6,7 @@ import DesignSystem from "./design.system";
 
 const Root = (props) => {
   return (
-    <ThemeProvider theme={nextTheme}>
+    <ThemeProvider baseTheme={nextTheme} theme={{ modal: { width: 500 } }}>
       <div className="footer">
         <div className="footer-content">
           <DesignSystem />

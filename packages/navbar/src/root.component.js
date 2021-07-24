@@ -1,25 +1,29 @@
 import React from "react";
 import { hot } from "react-hot-loader/root";
+import { ThemeProvider, nextTheme } from "@example/design-system";
+import { Button } from "@example/design-system";
 
 const Root = (props) => {
   return (
-    <div>
-      <div className="navbar">
-        <div className="navbar-content">
-        <ul>
-          <li>
-          <a href='/home'>Home</a>
-          </li>
-          <li>
-          <a href='/login'>Login</a>
-          </li>
-          <li>
-          <a href='/'>root</a>
-          </li>
-        </ul>
+    <ThemeProvider>
+      <div>
+        <div className="navbar">
+          <div className="navbar-content">
+            <ul>
+              <li>
+                <a href='/home'><Button text="HOME" /></a>
+              </li>
+              <li>
+                <a href='/login'><Button text="LOGIN" /></a>
+              </li>
+              <li>
+                <a href='/'><Button text="ROOT" /></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
