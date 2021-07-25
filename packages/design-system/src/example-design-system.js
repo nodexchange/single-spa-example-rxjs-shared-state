@@ -22,5 +22,7 @@ export { ThemeProvider };
 export { nextTheme };
 export { I18nContext };
 export { i18n };
+export { GridLoading };
+export { ComposedGrid };
 
 export const CustomButton = ({text}) => (<button>{text}</button>)
