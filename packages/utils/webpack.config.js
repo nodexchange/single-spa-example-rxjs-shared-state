@@ -16,6 +16,8 @@ module.exports = (webpackConfigEnv, argv) => {
         'react-dom': '@hot-loader/react-dom',
       },
     },
+    mode: 'development',
+    devtool: 'eval',
     externals: ["rxjs"],
     devServer: {
       port: 9005,

@@ -1,10 +1,10 @@
-import { PtxTypography } from "@example/design-system";
+import { Button } from "@example/design-system";
 import React from 'react'
 
 const DesignTest = () => {
   return (
     <div>
-      <PtxTypography text="Working?" />
+      <Button text="Working or not?" />
     </div>
   )
 }

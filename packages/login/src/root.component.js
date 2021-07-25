@@ -3,8 +3,6 @@ import { auth$, login } from "@example/auth";
 import { design } from "@example/utils";
 import Loader from "./loader.component";
 
-import { hot } from "react-hot-loader/root";
-
 const Root = (props) => {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState();
@@ -52,4 +50,4 @@ const Root = (props) => {
   );
 };
 
-export default hot(Root);
+export default Root;

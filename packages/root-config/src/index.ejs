@@ -1,50 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Root Config</title>
-  <style>
-    /* Critical CSS */
-    html, body {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-    body {
-      margin: 0;
-    }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.5/runtime.min.js"></script>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src <% if(isLocal) { %> 'unsafe-eval' <% } %> 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
-  <meta name="importmap-type" content="systemjs-importmap" />
-  <script type="systemjs-importmap">
-    {
-      "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.3/lib/system/single-spa.min.js",
-        "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js",
-        "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es2015/rxjs.min.js",
-        "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es2015/rxjs-operators.min.js"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Root Config</title>
+    <style>
+      /* Critical CSS */
+      html,
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
-    }
-  </script>
+      body {
+        margin: 0;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.5/runtime.min.js"></script>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' https: localhost:*; script-src <% if(isLocal) { %> 'unsafe-eval' <% } %> 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"
+    />
+    <meta name="importmap-type" content="systemjs-importmap" />
+    <% if (isLocal) { %>
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.3/lib/system/single-spa.min.js",
+          "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js",
+          "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js",
+          "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es2015/rxjs.min.js",
+          "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es2015/rxjs-operators.min.js"
+        }
+      }
+    </script>
+    <% } else { %>
 
-  <% if (isLocal) { %>
-  <script type="systemjs-importmap">
-    {
-      "imports": {
-        "@example/root-config": "http://localhost:9000/example-root-config.js",
-        "@example/navbar": "http://localhost:8000/example-navbar.js",
-        "@example/home": "http://localhost:5001/example-home.js",
-        "@example/login": "http://localhost:5002/example-login.js",
-        "@example/auth": "http://localhost:9001/example-auth.js",
-        "@example/footer": "http://localhost:9004/example-footer.js",
-        "@example/utils": "http://localhost:9005/example-utils.js",
-        "@example/design-system": "http://localhost:9010/example-design-system.js"
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.3/lib/system/single-spa.min.js",
+          "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js",
+          "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js",
+          "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es2015/rxjs.min.js",
+          "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es2015/rxjs-operators.min.js"
+        }
       }
-    }
-  </script>
-  <% } else { %>
+    </script>
+    <% } %> <% if (isLocal) { %>
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "@example/root-config": "http://localhost:9000/example-root-config.js",
+          "@example/navbar": "http://localhost:8000/example-navbar.js",
+          "@example/footer": "http://localhost:9004/example-footer.js",
+          "@example/home": "http://localhost:5001/example-home.js",
+          "@example/login": "http://localhost:5002/example-login.js",
+          "@example/auth": "http://localhost:9001/example-auth.js",
+          "@example/utils": "http://localhost:9005/example-utils.js",
+          "@example/design-system": "http://localhost:9010/example-design-system.js"
+        }
+      }
+    </script>
+    <% } else { %>
     <script type="systemjs-importmap">
       {
         "imports": {
@@ -52,48 +69,58 @@
           "@example/navbar": "/navbar/example-navbar.js",
           "@example/home": "/home/example-home.js",
           "@example/login": "/login/example-login.js",
-          "@example/footer": "/login/example-footer.js",
+          "@example/footer": "/footer/example-footer.js",
           "@example/auth": "/auth/example-auth.js",
           "@example/utils": "/design/example-utils.js",
           "@example/design-system": "/design/example-design-system.js"
         }
       }
     </script>
-  <% } %>
+    <% } %> <% if (isLocal) { %>
+    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.3.0/dist/import-map-overrides.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+    <% } else { %>
+    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.3.0/dist/import-map-overrides.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+    <% } %>
 
-  <% if (isLocal) { %>
-  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.3.0/dist/import-map-overrides.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
-  <% } else { %>
-  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.3.0/dist/import-map-overrides.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
-  <% } %>
-
-  <template id="single-spa-layout">
-    <single-spa-router>
-      <div>
-        <application name="@example/navbar" props="authToken,loggedInUser,bottomlineProp"></application>
-      </div>
-      <main>
-        <route path="home" >
-          <application name="@example/home" props="authToken,loggedInUser,bottomlineProp"></application>
-        </route>
-        <route path="login">
-          <application name="@example/login"></application>
-        </route>
-      </main>
-      <div>
-        <application name="@example/footer" props="authToken,loggedInUser,bottomlineProp"></application>
-      </div>
-    </single-spa-router>
-  </template>
-</head>
-<body>
-  <script>
-    System.import('@example/root-config');
-  </script>
-  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
-</body>
+    <template id="single-spa-layout">
+      <single-spa-router>
+        <div>
+          <application
+            name="@example/navbar"
+            props="authToken,loggedInUser,bottomlineProp"
+          ></application>
+        </div>
+        <main>
+          <route path="home">
+            <application
+              name="@example/home"
+              props="authToken,loggedInUser,bottomlineProp"
+            ></application>
+          </route>
+          <route path="login">
+            <application name="@example/login"></application>
+          </route>
+        </main>
+        <div>
+          <application
+            name="@example/footer"
+            props="authToken,loggedInUser,bottomlineProp"
+          ></application>
+        </div>
+      </single-spa-router>
+    </template>
+  </head>
+  <body>
+    <script>
+      System.import('@example/root-config');
+    </script>
+    <import-map-overrides-full
+      show-when-local-storage="devtools"
+      dev-libs
+    ></import-map-overrides-full>
+  </body>
 </html>
