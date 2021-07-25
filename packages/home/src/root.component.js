@@ -10,7 +10,7 @@ const Home = (props) => {
         <section style={{ textAlign: "center", padding: "1rem" }}>
           {props.name} is mounted today?!
           <Button text={'Glu button'} />
-          <p>hello</p>
+          <p>hello now? fast?</p>
           <p>customProp: {props.bottomlineProp}</p>
         </section>
       </I18nContext.Provider>
