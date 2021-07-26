@@ -31,11 +31,9 @@
     "classnames": "https://cdn.jsdelivr.net/npm/classnames@2.3.1/index.js",
     "deepmerge": "https://cdn.jsdelivr.net/npm/deepmerge@2.1.1/dist/umd.js",
     "memoize-one": "https://cdn.jsdelivr.net/npm/memoize-one@4.0.0/dist/memoize-one.js",
-    "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js",
+    "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
     "react-beautiful-dnd": "https://cdn.jsdelivr.net/npm/react-beautiful-dnd@13.1.0/dist/react-beautiful-dnd.min.js",
-    "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js",
-    "react-dom-prod": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js",
-    "react-prod": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
+    "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js",
     "react-jss": "https://unpkg.com/react-jss/dist/react-jss.js",
     "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es2015/rxjs.min.js",
     "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es2015/rxjs-operators.min.js",
@@ -44,8 +42,7 @@
     "moment": "https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.js",
     "numeral": "https://cdn.jsdelivr.net/npm/numeral@2.0.6/numeral.js",
     "prop-types": "https://cdn.jsdelivr.net/npm/prop-types@15.7.2/prop-types.js",
-    "single-spa": "http://localhost:9090/npm/single-spa@5.9.3/lib/system/single-spa.dev.js",
-    "single-spa-react": "https://cdn.jsdelivr.net/npm/single-spa-react@4.3.0/lib/umd/single-spa-react.js",
+    "single-spa": "http://localhost:9090/npm/single-spa@5.9.3/lib/system/single-spa.min.js",
     "wcag-contrast": "https://cdn.jsdelivr.net/npm/wcag-contrast@2.1.1/dist/index.js"
   }
 }

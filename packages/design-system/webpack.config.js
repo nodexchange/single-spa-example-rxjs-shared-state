@@ -23,13 +23,23 @@ module.exports = (webpackConfigEnv, argv) => {
     argv,
   });
 
+  defaultConfig.externals.push(
+    'classnames',
+    'numeral',
+    'moment',
+    'single-spa-react',
+    'hookrouter',
+    /^@glu\//,
+    'ag-grid-community',
+    'ag-grid-react',
+    'react-jss',
+    'lodash',
+    'axios',
+  );
+
+
   const config = mergeRulesByTestMatch(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
-    resolve: {
-      alias: {
-        'react-dom': '@hot-loader/react-dom',
-      },
-    },
     module: {
       rules: [
         {

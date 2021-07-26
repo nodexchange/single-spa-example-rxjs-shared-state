@@ -19,24 +19,14 @@ const config = {
       include: ["umd/**"],
     },
     {
-      name: "vue",
-      versions: ["2.6.14"],
-      include: ["dist/vue.js", "dist/vue.min.js"],
-    },
-    {
-      name: "vue-router",
-      versions: ["3.5.2"],
-      include: ["dist/vue-router.js", "dist/vue-router.min.js"],
-    },
-    {
-      name: "single-spa-angularjs",
-      versions: ["4.3.0"],
-      include: ["lib/**"],
-    },
-    {
       name: "prop-types",
       versions: ["15.7.2"],
       include: ["lib/**"],
+    },
+    {
+      name: "rxjs",
+      versions: ["7.2.0"],
+      include: ["dist/**"],
     },
     {
       name: "memoize-one",
