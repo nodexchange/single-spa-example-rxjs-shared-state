@@ -1397,10 +1397,10 @@
   dependencies:
     classnames "^2.2.6"
 
-"@glu/theming@2.6.0":
-  version "2.6.0"
-  resolved "http://ux-nexus.saas-n.com/repository/ux-npm-group/@glu/theming/-/theming-2.6.0.tgz#d951f840c5c62cc3a09c436cb7599e2c57ae6e0b"
-  integrity sha512-hDwB8EfOMkjnf2wMpVlHv3QoszdF4A0GNDXo42fkyKubJqKm8coL1NPMbQsrri6qSp3E3lLLOd+CwJsE3rGt8g==
+"@glu/theming@^3.0.5":
+  version "3.0.5"
+  resolved "http://ux-nexus.saas-n.com/repository/ux-npm-group/@glu/theming/-/theming-3.0.5.tgz#a5368ce7e84c9e3aafde33e9017626b86df1ad10"
+  integrity sha512-oTFEMPPbZN8OaI1NWBM+fSMw+HtJOV/oShS8AiBOUe1LUwYz6W8S4K20+NaL0H0Jd9w0mnM6B+xyYp9EcyhEKA==
   dependencies:
     deepmerge "^2.1.1"
     memoize-one "^4.0.0"
