@@ -1,0 +1,58 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ianwalter/pnpm:latest
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: |
+            pnpm install --frozen-lockfile
+            pnpm run build
+      - save_cache:
+          key: build-output-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - npm
+  deploy:
+    docker:
+      - image: google/cloud-sdk
+    environment:
+    steps:
+      - checkout
+      - restore_cache:
+          key: build-output-{{ .Environment.CIRCLE_SHA1 }}
+      - run:
+          name: Deploy
+          command: |
+            echo "Creating google application credentials json file"
+            echo $GOOGLE_APPLICATION_CREDENTIALS_JSON > google-application-credentials.json
+
+            echo "Authenticating with Google"
+            gcloud auth activate-service-account --key-file google-application-credentials.json
+
+            if [ -z "$(ls -A /root/project/npm)" ]; then
+              echo "No dependencies to upload"
+            else
+              echo "Uploading self hosted dependencies"
+              gsutil cp -rZ /root/project/npm gs://$BUCKET_NAME
+            fi
+
+            echo "Import Map"
+            cat importmap.json
+
+            echo "Updating import map"
+            curl -X PATCH $DEPLOYER_HOST/import-map.json\?env=$DEPLOYER_ENV --data "@importmap.json" -H "Accept: application/json" -H "Content-Type: application/json" -u $DEPLOYER_USERNAME:$DEPLOYER_PASSWORD
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          context: deploy-context
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
